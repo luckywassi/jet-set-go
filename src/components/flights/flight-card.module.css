@@ -1,0 +1,40 @@
+.flight-details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.airlineName {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  color: black;
+  font-weight: bolder;
+}
+
+.timing-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+hr {
+  margin: 0;
+  height: .2rem;
+  border-top: solid rgb(81, 226, 194)
+}
+
+.topText {
+  margin-bottom: 0;
+  font-weight: bolder;
+
+}
+
+.bottomText {
+  font-weight: 400;
+  font-size: .8rem;
+  margin-bottom: 0;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,60 @@
+.search-container {
+  background-color: var(--clr-white);
+  padding: 5rem 0;
+  background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/images/about.jpeg) center/cover no-repeat;
+}
+
+.form-label {
+  color: var(--clr-white);
+  font-weight: bolder;
+}
+
+.select-airline-btn {
+  color: var(--clr-grey-5);
+  background-color: var(--clr-white);
+  letter-spacing: 0;
+}
+
+.select-airline-btn::after {
+  margin-left: 1rem;
+}
+
+.select-airline-btn:hover,
+.select-airline-btn:focus,
+.select-airline-btn:focus-visible,
+.select-airline-btn:active {
+  color: var(--clr-grey-5) !important;
+  background-color: var(--clr-white) !important;
+  border: 2px var(--clr-grey-9) solid !important;
+}
+
+
+.resultsSection {
+  background-color: var(--clr-grey-10);
+  padding: .5rem 0;
+  padding-bottom: 2rem;
+}
+
+.resultsWrapper {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.results {
+  background-color: var(--clr-white);
+  padding: 2rem;
+  box-shadow: var(--dark-shadow);
+  flex-grow: 1;
+  height: 30rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.airlineDropdown button {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
