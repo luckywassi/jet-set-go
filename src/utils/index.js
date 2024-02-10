@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 
 export const formatPrice = (price, currency = "INR") => {
   switch (currency) {
@@ -6,4 +7,12 @@ export const formatPrice = (price, currency = "INR") => {
     default:
       return "₹ ".concat(price);
   }
+}
+
+export const handleToastError = (e, options = {}) => {
+  toast.error(e?.message, {
+    //To prevent multiple same message errors
+    toastId: e?.message,
+    ...options
+  })
 }

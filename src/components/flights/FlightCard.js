@@ -3,11 +3,10 @@ import { formatPrice } from "../../utils";
 import styles from "./flight-card.module.css";
 import classNames from "classnames";
 import { FcAdvance } from "react-icons/fc";
-import { memo } from "react";
 
 const FlightCard = ({ flight }) => {
 
-  const { id, fare, displayData } = flight;
+  const { fare, displayData } = flight;
   const { source, destination, airlines, stopInfo, totalDuration } = displayData || {};
   const airline = airlines?.[0];
   const price = formatPrice(fare);
@@ -17,7 +16,7 @@ const FlightCard = ({ flight }) => {
   const arrDateTime = moment(destination?.arrTime).format("DD-MM-YYYY - hh:mm A");
 
   return (
-    <div key={id} className={styles["flight-details"]}>
+    <div className={styles["flight-details"]}>
       <p className={styles.airlineName}>{airline.airlineName}
         <code className='ms-2'>
           ({airline.airlineCode}-{airline.flightNumber})
@@ -62,4 +61,4 @@ const FlightCard = ({ flight }) => {
   )
 }
 
-export default memo(FlightCard)
+export default FlightCard

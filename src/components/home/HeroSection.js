@@ -11,7 +11,7 @@ export const HeroSection = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
           explicabo debitis est autem dicta.
         </p>
-        <Link to={routes.flights} className="btn-custom hero-btn scroll-link">explore</Link>
+        <Link to={routes.flights} className="btn-custom hero-btn">Find Flights</Link>
       </div >
     </div >
   )

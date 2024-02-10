@@ -4,6 +4,9 @@ import { produce } from 'immer'
 import { cloneDeep, uniqBy } from 'lodash';
 import moment from 'moment';
 import constants from '../utils/constants';
+import { handleToastError } from "../utils"
+import { useStore } from '../contexts/store/store';
+import { setLoading } from '../contexts/store/actions';
 
 const initialFiters = {
   from: "",
@@ -20,10 +23,16 @@ const useFlights = () => {
   const [filters, setFilters] = useState(initialFiters);
   const [sortByPrice, setSortByPrice] = useState(null);
 
+  const { dispatch } = useStore();
+
   useEffect(() => {
 
+    //Scroll to top;
+    window.scrollTo(0, 0);
     (async () => {
+      dispatch(setLoading(true));
       const [res, error] = await getFlights();
+      dispatch(setLoading(false));
       if (res) {
         setFlightsData(res.data.result);
         const _airlines = uniqBy(res.data.result, uniqByAirlineCode).map(flight => {
@@ -33,9 +42,10 @@ const useFlights = () => {
         });
         setAirlines(_airlines)
       } else {
-
+        handleToastError(error)
       }
-    })()
+    })();
+
   }, []);
 
   const hanldeFrom = (e) => {

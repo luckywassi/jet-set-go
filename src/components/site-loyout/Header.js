@@ -30,18 +30,23 @@ const Header = () => {
             "show-links": showLinks
           })}>
             <li className='nav-item'>
-              <Link to="#about" className="scroll-link nav-link">
-                about
+              <Link to={routes.flights} className="nav-link">
+                flights
               </Link>
             </li >
             <li className='nav-item'>
-              <Link to="#featured" className="nav-link scroll-link">
+              <Link to="/#featured" className="nav-link scroll-link">
                 featured
               </Link>
             </li >
             <li className='nav-item'>
-              <Link to="#gallery" className="nav-link scroll-link">
+              <Link to="/#gallery" className="nav-link scroll-link">
                 gallery
+              </Link>
+            </li >
+            <li className='nav-item'>
+              <Link to="/#about" className="scroll-link nav-link">
+                about
               </Link>
             </li >
           </ul >

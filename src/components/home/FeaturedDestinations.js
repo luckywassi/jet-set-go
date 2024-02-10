@@ -10,6 +10,7 @@ import { FaMap } from 'react-icons/fa';
 const FeaturedDestinations = () => {
   const tourData = [
     {
+      id: 1,
       src: Tour1,
       data: "august 26th, 2020",
       title: "Tibet Adventure",
@@ -20,6 +21,7 @@ const FeaturedDestinations = () => {
       price: "$2100"
     },
     {
+      id: 2,
       src: Tour2,
       data: "august 26th, 2020",
       title: "Tibet Adventure",
@@ -30,6 +32,7 @@ const FeaturedDestinations = () => {
       price: "$2100"
     },
     {
+      id: 3,
       src: Tour3,
       data: "august 26th, 2020",
       title: "Tibet Adventure",
@@ -40,6 +43,7 @@ const FeaturedDestinations = () => {
       price: "$2100"
     },
     {
+      id: 4,
       src: Tour4,
       data: "august 26th, 2020",
       title: "Tibet Adventure",
@@ -50,6 +54,7 @@ const FeaturedDestinations = () => {
       price: "$2100"
     }
     , {
+      id: 5,
       src: Tour5,
       data: "august 26th, 2020",
       title: "Tibet Adventure",
@@ -60,6 +65,7 @@ const FeaturedDestinations = () => {
       price: "$2100"
     }
     , {
+      id: 6,
       src: Tour6,
       data: "august 26th, 2020",
       title: "Tibet Adventure",
@@ -78,7 +84,7 @@ const FeaturedDestinations = () => {
       <div className="section-center featured-center ">
         {tourData.map((tour => {
           return (
-            <article className="tour-card" key={tour.title}>
+            <article className="tour-card" key={tour.id}>
               <div className="tour-img-container">
                 <img src={tour.src} className="tour-img" alt={tour.title} />
                 <p className="tour-date">august 26th, 2020</p>

@@ -188,7 +188,7 @@ p {
   color: var(--clr-primary-5);
 }
 
-.btn-custom .section-center {
+.section-center {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
@@ -212,7 +212,6 @@ Hero
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .hero-banner {
@@ -712,8 +711,8 @@ Navbar
     padding: 1rem 2rem;
   }
 
-  .nav-link {
-    margin-right: 0.7rem;
+  .nav-item+.nav-item {
+    margin-left: 2rem;
   }
 
   .nav-icon:hover {
@@ -740,4 +739,20 @@ code {
   font-weight: 100;
   font-size: small;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-found-img {
+  max-height: 10rem;
+  max-width: 10rem;
+}
+
+.not-found-page {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
