@@ -12,13 +12,24 @@ const Header = () => {
     setShowLinks(prev => !prev);
   }
 
+  const hideLinks = () => {
+    setShowLinks(false);
+  }
+
+  const links = [
+    { name: "flights", to: routes.flights, isScrollLink: false },
+    { name: "featured", to: "/#featured", isScrollLink: true },
+    { name: "gallery", to: "/#gallery", isScrollLink: true },
+    { name: "about", to: "/#about", isScrollLink: true }
+  ];
+
   return (
     <header id="home">
 
       <nav className="navbar">
         <div className="nav-center">
           <div className="nav-header">
-            <Link to={routes.home} className='nav-icon'>
+            <Link to={routes.home} className='nav-icon' onClick={hideLinks}>
               <i className='me-2'><FaPaperPlane /></i>
               <span>JetSetGo</span>
             </Link>
@@ -29,26 +40,22 @@ const Header = () => {
           <ul className={classNames("nav-links", {
             "show-links": showLinks
           })}>
-            <li className='nav-item'>
-              <Link to={routes.flights} className="nav-link">
-                flights
-              </Link>
-            </li >
-            <li className='nav-item'>
-              <Link to="/#featured" className="nav-link scroll-link">
-                featured
-              </Link>
-            </li >
-            <li className='nav-item'>
-              <Link to="/#gallery" className="nav-link scroll-link">
-                gallery
-              </Link>
-            </li >
-            <li className='nav-item'>
-              <Link to="/#about" className="scroll-link nav-link">
-                about
-              </Link>
-            </li >
+            {links.map(link => {
+              const { name, to, isScrollLink } = link;
+              return (
+                <li className='nav-item' key={name}>
+                  <Link
+                    onClick={hideLinks}
+                    to={to}
+                    className={classNames("nav-link", {
+                      "scroll-link": isScrollLink
+                    })}
+                  >
+                    {name}
+                  </Link>
+                </li >
+              )
+            })}
           </ul >
           <ul className="nav-icons" >
             <li>

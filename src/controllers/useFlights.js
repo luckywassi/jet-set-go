@@ -46,7 +46,7 @@ const useFlights = () => {
       }
     })();
 
-  }, []);
+  }, [dispatch]);
 
   const hanldeFrom = (e) => {
     const value = e.target.value;

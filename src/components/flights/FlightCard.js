@@ -16,7 +16,7 @@ const FlightCard = ({ flight }) => {
   const arrDateTime = moment(destination?.arrTime).format("DD-MM-YYYY - hh:mm A");
 
   return (
-    <div className={styles["flight-details"]}>
+    <div className={styles["flight-details"]} data-testid="flight-card">
       <p className={styles.airlineName}>{airline.airlineName}
         <code className='ms-2'>
           ({airline.airlineCode}-{airline.flightNumber})
