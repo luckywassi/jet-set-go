@@ -11,6 +11,17 @@
   font-weight: bolder;
 }
 
+.dateTime {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timingSection {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
 .timing-details {
   display: flex;
   justify-content: space-between;
@@ -37,4 +48,33 @@ hr {
 .detail-container {
   display: flex;
   flex-direction: column;
+}
+
+
+@media screen and (max-width: 500px) {
+  .dateTime {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timingSection {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .timingSection {
+    flex-direction: column;
+  }
+
+  .detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

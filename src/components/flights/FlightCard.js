@@ -22,7 +22,7 @@ const FlightCard = ({ flight }) => {
           ({airline.airlineCode}-{airline.flightNumber})
         </code>
       </p>
-      <p className={classNames(styles.bottomText, 'd-flex justify-content-between mb-3')}>
+      <p className={classNames(styles.bottomText, styles.dateTime, 'mb-3')}>
         <span>
           {depDateTime}
         </span>
@@ -34,26 +34,31 @@ const FlightCard = ({ flight }) => {
         </span>
       </p>
       <div className={styles["timing-details"]}>
-        <div className={styles["detail-container"]}>
-          <p className={styles.topText}>{depTime}</p>
-          <p className={styles.bottomText}>
-            {source?.airport?.cityName} - {source?.airport?.cityCode}
-          </p>
+        <div className={styles.timingSection}>
+          <div className={styles["detail-container"]}>
+            <p className={styles.topText}>{depTime}</p>
+            <p className={styles.bottomText}>
+              {source?.airport?.cityName} - {source?.airport?.cityCode}
+            </p>
+          </div>
+          <div className={styles["detail-container"]}>
+            <p className={styles.topText}>{totalDuration}</p>
+            <hr />
+            <p className={styles.bottomText}>{stopInfo}</p>
+          </div>
         </div>
-        <div className={styles["detail-container"]}>
-          <p className={styles.topText}>{totalDuration}</p>
-          <hr />
-          <p className={styles.bottomText}>{stopInfo}</p>
-        </div>
-        <div className={styles["detail-container"]}>
-          <p className={styles.topText}>{arrTime}</p>
-          <p className={styles.bottomText}>
-            {destination?.airport?.cityName} - {destination?.airport?.cityCode}
-          </p>
-        </div>
-        <div className={styles["detail-container"]}>
-          <p className={styles.topText}>{price}</p>
-          <p className={styles.bottomText}>per adult</p>
+
+        <div className={styles.timingSection}>
+          <div className={styles["detail-container"]}>
+            <p className={styles.topText}>{arrTime}</p>
+            <p className={styles.bottomText}>
+              {destination?.airport?.cityName} - {destination?.airport?.cityCode}
+            </p>
+          </div>
+          <div className={styles["detail-container"]}>
+            <p className={styles.topText}>{price}</p>
+            <p className={styles.bottomText}>per adult</p>
+          </div>
         </div>
       </div>
       <hr className='mt-2' />
