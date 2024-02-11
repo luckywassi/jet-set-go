@@ -1,4 +1,4 @@
-import { act, render, screen, within } from '../../utils/tests-utils';
+import { render, screen, within } from '../../utils/tests-utils';
 import Flights from "../flights";
 import userEvent from '@testing-library/user-event';
 
@@ -41,9 +41,7 @@ describe("flight-page", () => {
     expect(dateInput).toBeInTheDocument();
     expect(flightCards).toHaveLength(50);
 
-    act(() => {
-      userEvent.click(airlineSection);
-    });
+    userEvent.click(airlineSection);
 
     const spiceJetOption = await screen.findByRole('button', {
       name: /jetspice/i
@@ -51,9 +49,7 @@ describe("flight-page", () => {
 
     expect(spiceJetOption).toBeInTheDocument();
 
-    act(() => {
-      userEvent.click(airlineSection);
-    });
+    userEvent.click(airlineSection);
 
     const flightResults = await screen.findByTestId("flight-results");
     const airIndiaFlight = within(flightResults).queryByText(/air india/);
