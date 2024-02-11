@@ -17,7 +17,7 @@ const FlightCard = ({ flight }) => {
 
   return (
     <div className={styles["flight-details"]} data-testid="flight-card">
-      <p className={styles.airlineName}>{airline.airlineName}
+      <p className={styles.airlineName} data-testid="airline-name">{airline.airlineName}
         <code className='ms-2'>
           ({airline.airlineCode}-{airline.flightNumber})
         </code>

@@ -45,7 +45,7 @@ const Flights = () => {
 
           {!flightsData?.length && <NotFound text="No Flights Found" />}
 
-          {!!flightsData?.length && <div className={styles["results"]}>
+          {!!flightsData?.length && <div className={styles["results"]} data-testid="flight-results">
             {flightsData?.map?.(flight => <FlightCard flight={flight} key={flight.id} />)}
           </div>}
 

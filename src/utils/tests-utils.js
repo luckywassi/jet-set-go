@@ -1,19 +1,21 @@
 import { render } from "@testing-library/react";
 import StoreProvider from "../contexts/store/store";
+import { BrowserRouter } from "react-router-dom";
 
 const AllTheProviders = ({ children }) => {
   return (
-    <StoreProvider>
-      {children}
-    </StoreProvider>
+    <BrowserRouter>
+      <StoreProvider>
+        {children}
+      </StoreProvider>
+    </BrowserRouter>
   )
 }
 
 const customRender = (ui, options = {}) => {
-  delete options.wrapper;
   return render(ui, {
-    wrapper: AllTheProviders,
-    ...options
+    ...options,
+    wrapper: AllTheProviders
   })
 }
 

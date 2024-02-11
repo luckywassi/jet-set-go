@@ -1,4 +1,4 @@
-import SiteLayout from "./components/site-loyout";
+import SiteLayout from "./components/site-layout";
 import Home from "./pages/home";
 import Flights from "./pages/flights";
 import useAppInitialization from "./hooks/useAppInitialization";

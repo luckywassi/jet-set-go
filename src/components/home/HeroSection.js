@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import routes from '../../lib/routes'
 
-export const HeroSection = () => {
+const HeroSection = () => {
   return (
     <div className="hero">
       <div className="hero-banner px-0 px-sm-3">
@@ -16,3 +16,6 @@ export const HeroSection = () => {
     </div >
   )
 }
+
+export default HeroSection
+

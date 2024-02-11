@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import FlightCard from "../FlightCard";
-import { testFlight } from "../../../lib/test-data";
+import { render, screen } from '../../utils/tests-utils';
+import FlightCard from "../flights/FlightCard";
+import { testFlight } from "../../lib/test-data";
 
 test('renders flight card correctly', () => {
   render(<FlightCard flight={testFlight} />);

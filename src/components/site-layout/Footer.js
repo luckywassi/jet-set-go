@@ -15,14 +15,14 @@ const Footer = () => {
       </ul>
       <ul className="footer-icons">
         <li>
-          <a href="https://www.twitter.com" target="_blank" className="footer-icon">
+          <a href="https://www.twitter.com" rel='noreferrer' target="_blank" className="footer-icon">
             <i><FaFacebook /></i>
           </a>
         </li>
-        <a href="https://www.twitter.com" target="_blank" className="footer-icon">
+        <a href="https://www.twitter.com" rel='noreferrer' target="_blank" className="footer-icon">
           <i><FaTwitter /></i>
         </a>
-        <a href="https://www.twitter.com" target="_blank" className="footer-icon">
+        <a href="https://www.twitter.com" rel='noreferrer' target="_blank" className="footer-icon">
           <i><FaSquarespace /></i>
         </a>
       </ul>
