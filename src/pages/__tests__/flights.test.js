@@ -41,7 +41,7 @@ describe("flight-page", () => {
     expect(dateInput).toBeInTheDocument();
     expect(flightCards).toHaveLength(50);
 
-    userEvent.click(airlineSection);
+    await userEvent.click(airlineSection);
 
     const spiceJetOption = await screen.findByRole('button', {
       name: /jetspice/i
@@ -49,11 +49,11 @@ describe("flight-page", () => {
 
     expect(spiceJetOption).toBeInTheDocument();
 
-    userEvent.click(airlineSection);
+    await userEvent.click(spiceJetOption);
 
     const flightResults = await screen.findByTestId("flight-results");
-    const airIndiaFlight = within(flightResults).queryByText(/air india/);
-    expect(airIndiaFlight).not.toBeInTheDocument();
+    const airIndiaFlights = within(flightResults).queryAllByText(/air india/i);
+    expect(airIndiaFlights).toHaveLength(0);
 
   });
 
