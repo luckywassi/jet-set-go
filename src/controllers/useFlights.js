@@ -5,7 +5,7 @@ import { cloneDeep, uniqBy } from 'lodash';
 import moment from 'moment';
 import constants from '../utils/constants';
 import { handleToastError } from "../utils"
-import { useStore } from '../contexts/store/store';
+import { useStore } from '../contexts/store';
 import { setLoading } from '../contexts/store/actions';
 
 const initialFiters = {
