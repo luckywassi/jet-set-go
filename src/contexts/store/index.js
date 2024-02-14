@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useMemo, useReducer } from "react";
 import storeReducer, { initialState } from "./store-reducer";
 
 const Context = createContext();
@@ -9,12 +9,11 @@ const StoreProvider = ({ children }) => {
 
   const [store, dispatch] = useReducer(storeReducer, initialState);
 
+  const contextData = useMemo(() => ({ store, dispatch }), [store, dispatch]);
+
   return (
     <Context.Provider
-      value={{
-        store,
-        dispatch
-      }}
+      value={contextData}
     >
       {children}
     </Context.Provider>
