@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { FaBars, FaFacebook, FaTwitter, FaSquarespace, FaPaperPlane } from 'react-icons/fa'
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
@@ -16,12 +16,12 @@ const Header = () => {
     setShowLinks(false);
   }
 
-  const links = [
+  const links = useMemo(() => ([
     { name: "flights", to: routes.flights, isScrollLink: false },
     { name: "featured", to: "/#featured", isScrollLink: true },
     { name: "gallery", to: "/#gallery", isScrollLink: true },
     { name: "about", to: "/#about", isScrollLink: true }
-  ];
+  ]), []);
 
   return (
     <header id="home">

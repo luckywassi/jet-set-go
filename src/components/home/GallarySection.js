@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Tour1 from "../../assets/images/tour-1.jpeg";
 import Tour2 from "../../assets/images/tour-2.jpeg";
 import Tour3 from "../../assets/images/tour-3.jpeg";
@@ -9,7 +9,7 @@ import { FaSearch } from "react-icons/fa";
 
 const GallarySection = () => {
 
-  const images = [
+  const images = useMemo(() => ([
     { src: Tour1, alt: "Tour 1" },
     { src: Tour2, alt: "Tour 2" },
     { src: Tour3, alt: "Tour 3" },
@@ -18,7 +18,8 @@ const GallarySection = () => {
     { src: Tour6, alt: "Tour 6" },
     { src: Tour1, alt: "Tour 7" },
     { src: Tour2, alt: "Tour 8" },
-  ]
+  ]), []);
+
   return (
     <section id="gallery">
       <div className="gallery-center">

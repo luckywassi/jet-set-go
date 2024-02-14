@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Tour1 from "../../assets/images/tour-1.jpeg";
 import Tour2 from "../../assets/images/tour-2.jpeg";
 import Tour3 from "../../assets/images/tour-3.jpeg";
@@ -8,7 +8,8 @@ import Tour6 from "../../assets/images/tour-6.jpeg";
 import { FaMap } from 'react-icons/fa';
 
 const FeaturedDestinations = () => {
-  const tourData = [
+
+  const tourData = useMemo(() => ([
     {
       id: 1,
       src: Tour1,
@@ -75,7 +76,8 @@ const FeaturedDestinations = () => {
       location: "china",
       price: "$2100"
     }
-  ]
+  ]), []);
+
   return (
     <section className="section" id="featured">
       <div className="section-title">
